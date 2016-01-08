@@ -27,7 +27,9 @@
 
         <h2>
             {% for user in winners %}
-                {{ user }}
+                {% if loop.first %} UG Leader: {{ user }}
+                {% else %} Free one: {{ user }}
+                {% endif %}
                 {% if not loop.last %}<br>
                 {% endif %}
             {% endfor %}
